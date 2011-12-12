@@ -1,0 +1,9 @@
+<header>
+	<a href="/<%= "#{params[:word]}"%>"><%= "#{params[:word]}"%></a>
+</header>
+
+<div id="title">
+  <% for item in @wordIndex.printSearchCounts %>
+    <h1><%= item %></h1>
+  <% end %>	
+</div>

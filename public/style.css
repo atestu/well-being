@@ -1,0 +1,39 @@
+/* @override 
+	http://localhost:4567/style.css
+	http://0.0.0.0:4567/style.css
+*/
+
+html {
+	font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+body {
+	width: 80%;
+	margin: auto;
+}
+
+#description {
+}
+
+h1 {
+	color: blue;
+}
+
+.word {
+	display: inline-block;
+	width: 20%;
+	min-width: 200px;
+	margin: auto;
+}
+
+h2 {
+	font-size: 100%;
+	font-weight: normal;
+	color: #000;
+}
+
+.word-counts p {
+	font-size: 200%;
+	font-weight: bold;
+	margin: 0px;
+}

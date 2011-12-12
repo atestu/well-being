@@ -1,0 +1,13 @@
+<div id="count">
+	<p id="description">Search results counts (twitter, blogs, and fora)</p>
+	<% for wordIndex in @wordIndexTable %>
+		<div class="word">
+			<h2><%= wordIndex.word %>:</h2>
+			<div class="word-counts">
+		   	<% for count in wordIndex.printSearchCounts %>
+					<p><%= count %></p>
+				<% end %>				
+			</div>
+		</div>
+  <% end %>
+</div>
