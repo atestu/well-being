@@ -41,21 +41,27 @@ class WordIndex
   def computeIndex # compute the index
     
   end  
-  def searches # table of searches to perform
-    ["https://www.google.com/search?&q=#{@word}+site%3Atwitter.com&hl=en&lr=&cr=countryUS&tbs=ctr%3AcountryUS",
-      "https://www.google.com/search?&q=#{@word}&hl=en&cr=countryUS&tbs=ctr%3AcountryUS&tbm=blg",
-      "https://www.google.com/search?q=#{@word}&num=100&hl=en&cr=countryUS&tbs=ctr:countryUS,dtf:f&tbm=dsc"]
+  def Searches # table of searches to perform
+    ["https://www.google.com/search?&q=#{@word}+site%3Atwitter.com&hl=en&lr=&cr=countryUS&tbs=ctr%3AcountryUS", # twitter
+      "https://www.google.com/search?&q=#{@word}&hl=en&cr=countryUS&tbs=ctr%3AcountryUS&tbm=blg",               # blogs
+      "https://www.google.com/search?q=#{@word}&num=100&hl=en&cr=countryUS&tbs=ctr:countryUS,dtf:f&tbm=dsc",    #fora
+      ",cdr:1,cd_min:11/1/2008,cd_max:12/1/2008"
+    ]
+     
+     
       # "https://www.google.com/search?q=#{@word}&hl=en&cr=countryUS&tbs=ctr:countryUS&tbm=nws&source=lnms"]
   end
-  def initialize(word)
+  def initialize(word, from, to)
     @word = word
+    @from = from # start date
+    @to = to # end date
     @searchCounts = []
     @printSearchCounts = []
     @surprisingness = 0
   end
   attr_accessor :word, :searchCounts, :printSearchCounts, :surprisingness
   # searchCounts is a table of the number of results for each search
-  #   is searchCounts but for pretty printing (with a comma)
+  # printSearchCounts is searchCounts but for pretty printing (with a comma)
 end
 
 get '/:keyword' do
